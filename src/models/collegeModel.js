@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 
+
 const CollegeModel = new mongoose.Schema({
     name: {
         type: String,
@@ -11,13 +12,14 @@ const CollegeModel = new mongoose.Schema({
         require: true,
     },
     logoLink:{
+        type: String,
         require: true
     },
     isDeleted:{
         type: Boolean,
         default: false
     }
-},{timestamps: true})
+},{timestamps:true})
 
 module.exports= mongoose.model("College", CollegeModel)
 

@@ -1,25 +1,26 @@
-const { ObjectId } = require('bson')
+// const { ObjectId } = require('bson')
 const mongoose = require('mongoose')
 const Email = require('mongoose-type-email')
-// const ObjectId = mongoose.Schema.Types.ObjectId
+const ObjectId = mongoose.Schema.Types.ObjectId
+
 
 const InternModel= new mongoose.Schema({
     name:{
         type: String,
-        require: true
+        required: true
     },
     email:{
         type: Email,
-        require: true
+        required: true
     },
     mobile_number:{
         type: Number,
-        require: true
+        required: true
     },
     collegeId:{
         type: ObjectId,
-        ref: College,
-        require: true
+        ref: "College",
+        required: true
     },
     isDeleted:{
         type: Boolean,
@@ -27,4 +28,4 @@ const InternModel= new mongoose.Schema({
     }
 },{timestamps: true})
 
-module.exports = mongoose.model("Intern", InternModel)
+module.exports = mongoose.model("intern", InternModel)
