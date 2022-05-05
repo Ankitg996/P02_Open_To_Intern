@@ -1,5 +1,7 @@
 const CollegeModel = require('../models/collegeModel')
 
+//Validation
+var regType01 = /^[A-Za-z]{2,}$/  // for college abbriviation name
 
 const colleges = async function (req, res) {
     try {

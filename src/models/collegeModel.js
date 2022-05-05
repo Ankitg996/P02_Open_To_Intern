@@ -1,19 +1,23 @@
+const res = require('express/lib/response')
 const mongoose = require('mongoose')
 
 
 const CollegeModel = new mongoose.Schema({
     name: {
         type: String,
-        require: true,
-        unique: true
+        required: true,
+        unique: true,
+        trim: true
     },
     fullName: {
         type: String,
-        require: true,
+        required: "The full name of college is required",
+        trim: true
     },
     logoLink:{
         type: String,
-        require: true
+        required: "Put the link of college logo",
+        trim: true
     },
     isDeleted:{
         type: Boolean,
