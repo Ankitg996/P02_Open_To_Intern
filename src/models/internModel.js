@@ -15,7 +15,8 @@ const InternModel= new mongoose.Schema({
     },
     mobile_number:{
         type: Number,
-        required: true
+        required: true,
+        unique: true
     },
     collegeId:{
         type: ObjectId,
