@@ -7,13 +7,12 @@ var regType01 = /^[A-Za-z]{2,}$/  // for college abbriviation name
 const colleges = async function (req, res) {
     try {
         let data = req.body
-        
+
         //---------------validation and more-------------------
         if(!data.name){
            return res.status(400).send({status:false, message:"college Abbriviation name is mandatory"})          
         }
         let abbNameFind = await CollegeModel.findOne({name: data.name})
-        console.log(abbNameFind)
         if(abbNameFind){
             return res.status(400).send({status:false, message:"Douplicate college Abbriviation name, not Allowed!"})
         }
