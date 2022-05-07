@@ -8,23 +8,20 @@ const InternModel= new mongoose.Schema({
     name:{
         type: String,
         required: true
-        // trim: true
     },
     email:{
         type: String,
-        required: true
-        // trim: true
+        required: true,
+        unique: true
     },
-    number:{
-        type: String,
+    mobile:{
+        type: Number,
         required: true,
         unique: true
     },
     collegeId:{
         type: ObjectId,
-        ref: "College",
-        required: true
-        // trim: true
+        ref: "College"
     },
     isDeleted:{
         type: Boolean,
